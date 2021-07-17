@@ -82,6 +82,7 @@ p {
   align-items: center; /*수직의 중심 정렬*/
   padding: 16px;
   transition: all var(--animation-duration) ease-in-out;
+  z-index: 1; /* navbar가 항상 가장 위에 있어야한다. */
 }
 
 .navbar__menu {
@@ -96,7 +97,7 @@ p {
 
 #navbar.navbar--dark {
   background-color: turquoise;
-  padding: 16px;
+  padding: 8px;
 }
 
 .navbar__menu__item {
@@ -139,6 +140,21 @@ p {
   width: 250px;
   height: 250px;
   border-radius: 50%;
+}
+
+.home__title,
+.home__description {
+  color: whitesmoke;
+}
+
+.home__contact {
+  color: blue;
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid white;
+  border-radius: var(--size-border-radius);
 }
 
 .section {
