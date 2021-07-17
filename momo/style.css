@@ -74,11 +74,14 @@ p {
 /* Navbar */
 
 #navbar {
+  width: 100%;
+  position: fixed; /* 항상 상단에 고정되어있기 때문에 */
   display: flex; /*중심은 수평적, 수직은 그 반대*/
   justify-content: space-between;
-  background-color: rgb(122, 235, 70);
+  background-color: transparent;
   align-items: center; /*수직의 중심 정렬*/
   padding: 16px;
+  transition: all var(--animation-duration) ease-in-out;
 }
 
 .navbar__menu {
@@ -91,9 +94,14 @@ p {
   font-weight: var(--weight-semi-bold);
 }
 
+#navbar.navbar--dark {
+  background-color: turquoise;
+  padding: 16px;
+}
+
 .navbar__menu__item {
   padding: 8px, 12px;
-  margin: 0 4px;
+  margin: 0 16px;
   cursor: pointer; /*클릭이 가능하다고 지정*/
   border-radius: var(--size-border-radius);
 }
@@ -124,6 +132,7 @@ p {
   background: url("imgs/mybackground.png") center/cover;
   padding: 40px;
   text-align: center;
+  padding: 100px;
 }
 
 .home__avartar {
