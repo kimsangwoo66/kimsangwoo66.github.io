@@ -32,6 +32,15 @@ homeContactBtn.addEventListener("click", () => {
   scrollIntoView("#contact");
 });
 
+//화면을 스크롤할때 홈화면의 투명도 조절
+
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+//사용자 지정 유틸리티 함수
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   //상단텝의 버튼을 눌렀을때 부드럽게 그 섹션으로 이동하게 한다.
