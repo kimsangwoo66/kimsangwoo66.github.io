@@ -22,8 +22,18 @@ navbarMenu.addEventListener("click", (event) => {
     return;
   }
 
-  console.log(event.target.dataset.link);
-  const scrollTo = document.querySelector(link);
+  scrollIntoView(link);
+});
+
+//contact me 버튼 이벤트
+
+const homeContactBtn = document.querySelector(".home__contact");
+homeContactBtn.addEventListener("click", () => {
+  scrollIntoView("#contact");
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
   //상단텝의 버튼을 눌렀을때 부드럽게 그 섹션으로 이동하게 한다.
   scrollTo.scrollIntoView({ behavior: "smooth" });
-});
+}
