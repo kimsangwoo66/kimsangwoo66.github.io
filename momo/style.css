@@ -119,13 +119,14 @@ p {
 
 .navbar__toggle-btn {
   position: absolute;
-  top: 24px;
+  top: 12px;
   right: 32px;
   font-size: 24px;
   color: white;
-  background-color: yellowgreen;
+  background-color: turquoise;
   display: none;
   outline: yellowgreen;
+  border-color: turquoise;
 }
 
 /* Home */
@@ -411,6 +412,28 @@ p {
   color: blue;
   transition: all var(--animation-duration) ease-in;
   /* ease in 은 서서히 빨라지다가 멈춘다. */
+}
+
+/* Scroll */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  background-color: greenyellow;
+  color: white;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  /* 안보일때는 클릭이 안되도록 지정 */
+  transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media screen and (max-width: 768px) {

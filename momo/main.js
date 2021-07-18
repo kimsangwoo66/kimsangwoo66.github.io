@@ -40,6 +40,23 @@ document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+//화면을 스크롤 다운할경우 스크롤업 버튼이 등장
+const arrowUp = document.querySelector(".arrow-up");
+document.addEventListener("scroll", () => {
+  //화면의 homeheight의 절반정도를 내려오면 스크롤업 버튼이 등장
+  if (window.scrollY > homeHeight / 2) {
+    // arrowUp에 있는 클래스를 추가
+    arrowUp.classList.add("visible");
+  } else {
+    arrowUp.classList.remove("visible");
+  }
+});
+
+//버튼 클릭시 화면 최상단으로 스크롤 이동
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#home");
+});
+
 //사용자 지정 유틸리티 함수
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
